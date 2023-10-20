@@ -3,7 +3,7 @@ package logica;
 import java.util.Scanner;
 
 public class logica_cajero {
-    private int saldo = 0;
+    protected int saldo = 0;
     Scanner entrada = new Scanner(System.in);
 
     public logica_cajero(int saldo){
