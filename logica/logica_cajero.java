@@ -3,13 +3,14 @@ package logica;
 import java.util.Scanner;
 
 public class logica_cajero {
-    private int saldo = 0, digito;
+    private int saldo = 0, digito = 0;
     Scanner entrada = new Scanner(System.in);
 
     public logica_cajero(int digito){
         this.digito = digito;
-
+        
     }
+        int numero = 0;
        public void info(){
         do{
             Scanner entrada = new Scanner(System.in);
@@ -28,15 +29,18 @@ public class logica_cajero {
                 break;
             case 2:
                 retirar();
+                break;
             case 3:
                 consignar_saldo();
-            case 4:
+            case 4: 
                 salir();
+                numero = 4;
                 break;
             default:
                 System.out.println("ha ingresado una opción invalida: " + digito + " no es una entrada correcta");
-        }
-        }while(digito != 4);
+                break;
+            }
+        }while(numero != 4);
     }
     private void consignar_saldo(){
         System.out.println("tu saldo actual es de: " + saldo + "$ Pesos ¿Cuanto deseas depositar?");
@@ -62,6 +66,7 @@ public class logica_cajero {
         info();
     }
     private void salir(){
+       
         System.out.println("Gracias por elegirnos");
     }
 }
