@@ -1,37 +1,20 @@
 package Cajero;
 import java.util.Scanner;
-
-import logica.consignar;
-import logica.consultar;
-import logica.retirar;
-import logica.salir;
+// importo logica_cajero de logica para usarlo
+import logica.logica_cajero;
 
 public class Cajero {
-    Scanner in = new Scanner(System.in);
-    int digito;
-    public void info(){
-        System.out.println("-------------------------------------------------------");
-        System.out.println("Por favor, seleccione una opción");
-        System.out.println("1. Consulta tu saldo");
-        System.out.println("2. Retiro de efectivo");
-        System.out.println("3. Depósito de efectivo");
-        System.out.println("4. Salir");
-        System.out.println("--------------------------------------------------------");
-        digito = in.nextInt();
-        switch (in) {
-            case 1:
-                
-                break;
-        
-            default:
-                break;
-        }
-    }
     
+ 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        
-
+        //Mensaje de bienvenida que solo se mostrará una vez
+        System.out.println("Bienvenido al cajero, presione cualquier tecla para continuar");
+        Scanner entrada = new Scanner(System.in);
+        int digito = entrada.nextInt();    
+        //envío el valor de dígito a través del operador designado "logica" 
+        logica_cajero logica = new logica_cajero(digito);
+        //inicializo info, para que el programa comience a recibir instrucciones.
+        logica.info();
 
     }
 }
